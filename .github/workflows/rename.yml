@@ -1,0 +1,20 @@
+name: Rename to index.html
+on:
+  workflow_dispatch:
+jobs:
+  rename:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rename file
+        run: |
+          if [ -f website-index.html ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            mv website-index.html index.html
+            git add -A
+            git commit -m "Rename website-index.html to index.html"
+            git push
+          fi
