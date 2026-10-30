@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Subscribe Karo — Ek Tap Me</title>
 <meta property="og:title" content="🔔 Mere YouTube Channels — Subscribe Karo">
-<meta property="og:description" content="Masti Toons • Chotu Kids TV • Raat Ki Kahani — laal Subscribe button dabao, confirm karo, ho gaya!">
+<meta property="og:description" content="Masti Toons • Chotu Kids TV • Raat Ki Kahani — button dabao, YouTube app me subscribe karo!">
 <meta property="og:image" content="https://vishek333.github.io/sk-cloths/subscribe-preview.jpg">
 <meta property="og:type" content="website">
 <script src="https://apis.google.com/js/platform.js"></script>
@@ -18,39 +18,56 @@
   .emoji { font-size:44px; }
   .name { font-size:23px; font-weight:bold; margin:8px 0 2px; }
   .desc { color:#aaa; font-size:14px; margin-bottom:18px; }
+  button.appbtn { position:relative; width:100%; border:none; cursor:pointer; background:linear-gradient(180deg,#ff3b30,#e60000); color:#fff; font-size:21px; font-weight:900; letter-spacing:.4px; padding:17px 10px; border-radius:999px; box-shadow:0 8px 24px rgba(255,0,0,.45), inset 0 2px 2px rgba(255,255,255,.35); animation:pulse 1.6s infinite; margin-bottom:16px; }
+  button.appbtn:active { transform:scale(.97); }
+  @keyframes pulse { 0%{ box-shadow:0 8px 24px rgba(255,0,0,.45), 0 0 0 0 rgba(255,0,0,.55);} 70%{ box-shadow:0 8px 24px rgba(255,0,0,.45), 0 0 0 18px rgba(255,0,0,0);} 100%{ box-shadow:0 8px 24px rgba(255,0,0,.45), 0 0 0 0 rgba(255,0,0,0);} }
   .btnwrap { display:flex; justify-content:center; min-height:48px; }
-  .fallback { display:inline-block; margin-top:14px; color:#ffb3b3; font-size:13px; }
+  .orline { color:#777; font-size:12px; margin:6px 0 10px; }
   .note { text-align:center; color:#888; font-size:13px; margin-top:8px; line-height:1.6; }
 </style>
+<script>
+function openInApp(handle){
+  var web = 'https://www.youtube.com/' + handle + '?sub_confirmation=1';
+  if (/Android/i.test(navigator.userAgent)) {
+    var intent = 'intent://www.youtube.com/' + handle + '?sub_confirmation=1#Intent;scheme=https;package=com.google.android.youtube;S.browser_fallback_url=' + encodeURIComponent(web) + ';end';
+    window.location = intent;
+  } else {
+    window.location = web;
+  }
+}
+</script>
 </head>
 <body>
   <h1>🔔 Subscribe Karo</h1>
-  <p class="sub">Neeche wale <b>laal Subscribe button</b> par tap karo — isi page par confirm popup khulega.<br>Confirm dabate hi subscribe ho jayega.</p>
+  <p class="sub">Bada wala laal button dabao — channel seedha <b>YouTube app</b> me khulega.<br>Wahan upar wale Subscribe button ko tap karna, ho gaya.</p>
 
   <div class="card">
     <div class="emoji">🏍️</div>
     <div class="name">Masti Toons</div>
     <div class="desc">KTM Duke 250 • peaceful bike shorts</div>
+    <button class="appbtn" onclick="openInApp('@rajtomar7760')">📱 YouTube App me Subscribe Karo</button>
+    <div class="orline">— ya isi page par —</div>
     <div class="btnwrap"><div class="g-ytsubscribe" data-channelid="UCAQQTP88mBOKwEEMYA59F5w" data-layout="full" data-count="default"></div></div>
-    <a class="fallback" href="https://www.youtube.com/@rajtomar7760?sub_confirmation=1">Button kaam na kare to yahan tap karo</a>
   </div>
 
   <div class="card">
     <div class="emoji">🐘</div>
     <div class="name">Chotu Kids TV</div>
     <div class="desc">Baccho ke cartoon • nursery rhymes</div>
+    <button class="appbtn" onclick="openInApp('@ChotuKidsTVOfficial')">📱 YouTube App me Subscribe Karo</button>
+    <div class="orline">— ya isi page par —</div>
     <div class="btnwrap"><div class="g-ytsubscribe" data-channelid="UCICw8hon0VaFIGQJDtEWEvg" data-layout="full" data-count="default"></div></div>
-    <a class="fallback" href="https://www.youtube.com/@ChotuKidsTVOfficial?sub_confirmation=1">Button kaam na kare to yahan tap karo</a>
   </div>
 
   <div class="card">
     <div class="emoji">👻</div>
     <div class="name">Raat Ki Kahani</div>
     <div class="desc">Hindi horror stories • bhoot ki kahani</div>
+    <button class="appbtn" onclick="openInApp('@raatkikahani-o6c')">📱 YouTube App me Subscribe Karo</button>
+    <div class="orline">— ya isi page par —</div>
     <div class="btnwrap"><div class="g-ytsubscribe" data-channelid="UCvpTAMvAAqAqtRrbjz_xqVA" data-layout="full" data-count="default"></div></div>
-    <a class="fallback" href="https://www.youtube.com/@raatkikahani-o6c?sub_confirmation=1">Button kaam na kare to yahan tap karo</a>
   </div>
 
-  <p class="note">Phone me Google/YouTube login hona chahiye — bina login subscribe ho hi nahi sakta.<br>Confirm wala tap subscribe karne wale ko khud karna padta hai — ye YouTube ka niyam hai.</p>
+  <p class="note">Laal button Android phone par YouTube app kholta hai; iPhone par link aam taur par khud app me khul jata hai.<br>App me confirm popup nahi aata — channel khulne par upar Subscribe button dikhega, wahi ek tap lagega.</p>
 </body>
 </html>
